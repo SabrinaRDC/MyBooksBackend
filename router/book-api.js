@@ -5,7 +5,7 @@ const router = require('express').Router();
 router.get('/', (req, res) => {
     (async () => {``
         try {
-            const sqlQuery = 'SELECT id,name,author,rating FROM books;';
+            const sqlQuery = 'SELECT id,name,author,rating FROM books ORDER BY name;';
             const results = await queryHelper(sqlQuery);
             return res.json(results);
         } catch (err) {
